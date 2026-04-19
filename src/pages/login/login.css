@@ -1,0 +1,119 @@
+/* Reset global: Garante que o navegador não adicione espaços extras por conta própria */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho total do elemento */
+}
+
+/* O Container segura tudo. O 'flex' faz o Banner e o Login ficarem lado a lado */
+.container{
+  display: flex;         /* Transforma a div em um container flexível (coloca os filhos lado a lado) */
+  height: 100vh;        /* Altura: 100% da Viewport Height (altura da tela do navegador) */
+  width: 100vw;         /* Largura: 100% da Viewport Width (largura total da tela) */
+}
+
+/* Estilo do Banner (Lado Verde) */
+.banner{
+  flex: 1.2;            /* Faz o banner crescer e ocupar 1.2 partes do espaço (é maior que o formulário) */
+  background: linear-gradient(135deg, #10b981, #059669); /* Fundo degradê inclinado */
+  color: white;         /* Cor do texto dentro do banner */
+  padding: 60px;        /* Espaçamento interno para o conteúdo não grudar nas bordas */
+  display: flex;        /* Também é flexível para alinhar o que está DENTRO dele */
+  flex-direction: column; /* Coloca os itens internos um abaixo do outro (coluna) */
+  justify-content: space-around; /* Distribui o espaço entre os itens (topo, meio e baixo) */
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.pink {
+color: #fb2c79;       /* A cor rosa de destaque que você usou na palavra "liberdade" */
+}
+
+/* .cards: Grade para os dois quadradinhos de informação */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide em duas coluans iguais */
+  gap: 20px; /* Espaço entres os cards */
+  margin-top: 40px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* .loginArea: O lado direito onde fica o formulário */
+.loginArea {
+  background-color: white;
+  width: 550px; /*Largura fixa para o formulário em telas grandes */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding: 40px;
+}
+
+/* .loginBox: O quadrado que limita a largura do formulário para não ficar esticado */
+.loginBox {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* .inputGroup: Espaçamento entre os blocos de E-mail e Senha */
+.inputGroup{
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .inputGroup: Espaçamento entre os blocos de E-mail e Senha */
+input {
+  padding: 16px;
+  border: 2px solid #f1f5f9;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  outline: none; /* Remove o contorno padrão do navegador ao clicar */
+  transition: 0.3; /* Deixa a mudança de cor suave ao clicar */
+}
+
+input:focus{
+  border-color: #059669;
+  background-color: white;
+}
+
+.btnEntrar {
+  width: 100%;
+  padding: 18px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer; /* Faz o cursor virar a mãozinha */
+  transition: 0.3;
+}
+
+.btnEntrar:hover {
+  background-color: #059669; /* Escurece o verde quando passo o mouse */
+  transform: translateY(-2px); /* Efeito sutil de levantar o botão */
+}
+
+/* .link: Links como 'Esqueceu a senha' e 'Criar conta' */
+.link {
+  color: #ec4899;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* RESPONSIVIDADE: O que acontece se abrir no celular? */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Em vez de lado a lado, coloca um em cima do outro */
+    }
+    
+    .loginArea {
+        width: 100%;            /* No celular, o formulário ocupa a largura toda */
+        padding: 40px 20px;
+    }
+}
