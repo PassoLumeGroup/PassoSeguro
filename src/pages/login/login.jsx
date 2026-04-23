@@ -2,66 +2,92 @@ import './login.css';
 
 function Login() {
     return(
-        /* className é o substituto do 'class' do HTML no React */
-        <div className='container'>
-            {/* Seção da esquerda: Banner */}
-            <aside className='banner'> {/* O 'aside' é usado para conteúdo lateral, como o seu banner */}
-                <div className='logoArea'>
-                    <span className='icon'>♀</span>
-                    <span className='brandName'>Passo Seguro</span>
-                </div>
+        
+        <div className='base-login'>
 
-                <div className='heroText'>
-                    <h1>Caminhe com <span className='pink'>liberdade</span> por fortaleza</h1>
-                    <p>A maior rede colaborativa de segurança feminina do Ceará. Mapeie rotas, denuncie perigos e proteja suas irmãs.</p>
-                </div>
-
-                <div className='cards'>
-                    {/* Cards informativos que ficam dentro do banner verde */}
-                    <div className='card'>
-                        <strong>Mapeamento Real</strong>
-                        <p>Dados atualizados por quem vive a cidade</p>
+            {/* Lado esquerdo APRESENTAÇÃO */}
+            <div className='base-apresentacao-login'>
+            
+                <div className='base-escopa-apresentacao'>
+                    {/* Logo */}
+                    <div className='logo-login'>
+                        <h1>Passo seguro</h1>{/* Ignorar por enquanto, logo a caminho */}
                     </div>
 
-                    <div className='card'>
-                        <strong>Pontos de Apoio</strong>
-                        <p>Locais verificados para acolhimento imediato</p>
+                    {/* Apresentação */}
+
+                    <h2 className='apresentacao-principal'>
+                        Sua segurança em {}
+                        <span className='destaque-apresentacao'>
+                            cada passo
+                        </span>
+                    </h2>
+
+                    <p className='apresentacao-secundaria'>
+                        A maior rede colaborativa de segurança feminina do Ceará. Mapeie rotas, denuncie perigos e proteja
+                    </p>
+
+                    <div className='grid-apresentacao'>
+                        <div className='grid-modelos'>
+                            {/* tem que colocar um icone */}
+
+                            <h4 className='grid-modelos-titulo'>Mapeamente Real</h4>
+
+                            <p className='grid-modelos-txt'>
+                                Dados atualizados por quem vive a cidade.
+                            </p>
+                        </div>
+
+                        <div className='grid-modelos'>
+                            {/* tem que colocar um icone */}
+
+                            <h4 className='grid-modelos-titulo'>Pontos de Apoio</h4>
+
+                            <p className='grid-modelos-txt'>
+                                Locais verificados para acolhimento imediato.
+                            </p>
+                        </div>
+
+                        <div className='grid-modelos'>
+                            {/* tem que colocar um icone */}
+
+                            <h4 className='grid-modelos-titulo'>Avaliações de Segurança</h4>
+
+                            <p className='grid-modelos-txt'>
+                                Avalie locais de 1 a 5 estrelas e consulte avaliações de outras usuárias.
+                            </p>
+                        </div>
+
+                        <div className='grid-modelos'>
+                            {/* tem que colocar um icone */}
+
+                            <h4 className='grid-modelos-titulo'>Comunidade Ativa</h4>
+
+                            <p className='grid-modelos-txt'>
+                               Contribua com sua experiência e ajude outras usuárias.
+                            </p>
+                        </div>
+
                     </div>
-                </div>
-            </aside>
 
-            {/* Main: Lado direito (área branca do formulário) */}
-            <main className='loginArea'>
-                <div className='loginBox'>
-                    <h2>Bem-Vinda</h2>
-                    <p>Entre para ver o que está acontecendo na sua rota</p>
-
-                    {/* O formulário chama a função lidarComLogin quando o botão é clicado */}
-                    <form>
-                        {/* inputGroup: Organiza o label em cima do campo de texto */} 
-                        <div className='labelRow'>
-                            <label htmlFor="Email">Email </label>
-                            <input type="email" placeholder='exemplo@gmail.com' required />
-                        </div>    
-                        
-                        <div className='inputGroup'>
-                            <label htmlFor="Senha">Senha </label>
-                            <input type="password" placeholder='********' required />
-                            <div className='labelRow'>
-                                <a href="#" className='link'>   Esqueceu a senha?</a>
+                    <div className='base-acesso-login'>
+                        <div>
+                            <div style={{marginBottom: '3rem'}}>
+                                <h3 className='welcome-login'>Bem-Vindo</h3>
+                                <p className='welcome-login-txt'> Entre para ver o que está acontecendo na sua rota</p>
                             </div>
-                        </div> 
-
-                        <button type='submit' className='btnEntrar'> Entrar</button>               
-                    </form>
-
-                    <div className='footerLogin'>
-                        <p>Ainda não faz parte? <a href="#" className='link'>Cadastre-se</a></p>
+                        </div>
                     </div>
                 </div>
-            </main>
 
+            </div>
+
+            {/* Lado direito LOGIN */}
+            <div className='base-login-direito'>
+
+            </div>
         </div>
+
     );
 
 }
