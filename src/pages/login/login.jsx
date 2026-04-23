@@ -8,7 +8,7 @@ function Login() {
             {/* Lado esquerdo APRESENTAÇÃO */}
             <div className='base-apresentacao-login'>
             
-                <div className='base-escopa-apresentacao'>
+                <div className='base-escopo-apresentacao'>
                     {/* Logo */}
                     <div className='logo-login'>
                         <h1>Passo seguro</h1>{/* Ignorar por enquanto, logo a caminho */}
@@ -69,23 +69,65 @@ function Login() {
                         </div>
 
                     </div>
+                </div>
+            </div>
+            
+            <div className='base-acesso-login'>
+                <div>
+                     <div style={{marginBottom: '3rem'}}>
+                        <h3 className='welcome-login'>Bem-Vindo</h3>
+                        <p className='welcome-login-txt'> Entre para ver o que está acontecendo na sua rota</p>
+                    </div>
 
-                    <div className='base-acesso-login'>
-                        <div>
-                            <div style={{marginBottom: '3rem'}}>
-                                <h3 className='welcome-login'>Bem-Vindo</h3>
-                                <p className='welcome-login-txt'> Entre para ver o que está acontecendo na sua rota</p>
+                    <form className='forms-login'>
+                        <div className='div-input'>
+                            <label className='label-login'>Email</label>
+                            <div className='div-login'>
+                                {/* colocar uma imagem */}
+                                <input 
+                                    type="email"
+                                    required
+                                    className='input-login'
+                                    placeholder='Exemplo@gmail.com'
+                                />
                             </div>
                         </div>
+
+                        <div className='forms-login'>
+
+                            <div className='div-senha-login'>
+                                <label className='label-login'>Senha</label>
+                                <button type='button' className='botao-esqueceu-senha'>
+                                    Esqueci minha senha
+                                </button>
+                            </div>
+                            <div className='div-login'>
+                                {/* colocar uma imagem */}
+                                <input 
+                                    type="password"
+                                    required
+                                    className='input-login'
+                                    placeholder='••••••••'
+                                />
+                            </div>
+                        </div>
+
+                        <button type='submit' className='botao-entrar-login'>
+                            Entrar
+                            {/* colocar uma imagem */}
+                        </button>
+                    </form>
+
+                    <div className='cadastro-login'>
+                        <p>
+                            Não tem uma conta?
+                        </p>
+
+                        <a href="pagina de cadastro" >Criar conta</a>
                     </div>
                 </div>
-
             </div>
-
-            {/* Lado direito LOGIN */}
-            <div className='base-login-direito'>
-
-            </div>
+                
         </div>
 
     );

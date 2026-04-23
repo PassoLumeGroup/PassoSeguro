@@ -33,7 +33,7 @@
   color: white;
 }
 
-.base-escopa-apresentacao{
+.base-escopo-apresentacao{
   position: relative;
   z-index: 10;
 }
@@ -156,4 +156,121 @@
   font-weight: 700;
   color: #334155;
   margin-left: 0.25rem;
+}
+.div-input {
+  position: relative;
+}
+.input-login { 
+  width: 100%;
+
+  padding-left: 3rem; 
+  padding-right: 1rem;
+
+  padding-top: 1rem; 
+  padding-bottom: 1rem;
+
+  background-color: #f8fafc; 
+
+  border-width: 2px; 
+  border-style: solid;
+
+  border-color: transparent; 
+
+  border-radius: 1rem; 
+
+  color: #0f172a; 
+
+  outline: none; 
+
+  transition: all 0.2s ease; 
+
+  
+  :focus {
+    background-color: white;
+  }
+
+  
+  :focus {
+    border-color: #10b981;
+  }
+}
+
+.div-senha-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0.25rem;
+}
+
+.botao-esqueceu-senha {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ec4899;
+  transition: color 0.2s ease;
+
+  :hover {
+    color: rgba(236, 72, 153, 0.8);
+  }
+}
+
+.botao-entrar-login {
+  width: 100%;
+  background-color: #10b981;
+  color: white;
+  font-weight: 800;
+  font-size: 1.125rem;
+  
+  padding-top: 1.25;
+  padding-bottom: 1.25;
+
+  border-radius: 1rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  transition: all 0.2s ease;
+
+  box-shadow: 0 20px 25px rgba(16,185,129,0.2);
+
+  :hover {
+    background-color: rgba(16,185,129,0.9);
+  }
+
+
+}
+
+.cadastro-login{
+  margin-top: 3rem; 
+  padding-top: 3rem; 
+
+  border-top-width: 1px;
+
+  border-top-style: solid;
+
+  border-top-color: #f1f5f9; 
+}
+
+
+.cadastro-login p {
+  text-align: center;
+  color: #475569;
+  font-weight: 500;
+}
+
+.cadastro-login a {
+  font-weight: 800; 
+  
+  color: #ec4899; 
+
+  /* hover:underline */
+  :hover {
+    text-decoration: underline;
+  }
+  
+  text-underline-offset: 4px; 
 }
