@@ -33,7 +33,7 @@ function Login() {
                     </h1>
 
                     {/* Texto secundário */}
-                    <p className='Wapresentacao-secundaria'>
+                    <p className='apresentacao-secundaria'>
                         A maior rede colaborativa de segurança feminina do Ceará. Mapeie rotas, denuncie perigos e proteja
                     </p>
 
