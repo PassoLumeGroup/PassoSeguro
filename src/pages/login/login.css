@@ -1,276 +1,497 @@
+/* ========================= */
+/* RESET GLOBAL */
+/* ========================= */
+
+/* Remove margens e paddings padrões do navegador
+   e padroniza o cálculo de tamanho dos elementos */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding não aumente o tamanho total do elemento */
+    box-sizing: border-box; 
+    /* Faz com que padding e border NÃO aumentem o tamanho final do elemento */
 }
+
+/* Estilo base do body (aplicado na página inteira) */
+body {
+    font-family: 'Arial', sans-serif; /* fonte padrão */
+    background-color: #f8fafc; /* cor de fundo geral (cinza claro) */
+}
+
+
+/* ========================= */
+/* CONTAINER PRINCIPAL */
+/* ========================= */
 
 .base-login {
-  min-height: 100vh; /* Altura mínima = Tela inteira */
-  display:  flex; /* Ativa a flexbox */
-  flex-direction: column; /* Empilhamento vertical */
+    display: flex; 
+    /* Ativa o FLEXBOX → permite organizar filhos lado a lado */
 
-  @media (min-width: 768px){
-    flex-direction: row; /* Em telas menores fica horizontal*/
-  }
+    min-height: 100vh; 
+    /* Altura mínima = 100% da tela (viewport height) */
 }
+
+
+/* ========================= */
+/* HERO / APRESENTAÇÃO */
+/* ========================= */
 
 .base-apresentacao-login {
-  flex: 1; /* Ocupa o espaço disponível */
-  
-  background-color: #4faf8f;
-  
-  display: flex;
-  
-  flex-direction: column;
-  justify-content: center;
-  
-  padding-left: 2rem;
-  padding-right: 2rem;
+    flex: 1; 
+    /* Ocupa todo o espaço disponível dentro do flex container */
 
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+    /* Fundo com gradiente */
+    background: #2A7B9B; /* fallback */
+    background: linear-gradient(
+        90deg, 
+        rgba(42, 123, 155, 1) 0%, 
+        rgba(87, 199, 133, 1) 83%
+    );
 
-  color: white;
+    color: white; /* texto branco */
+
+    padding: 80px; 
+    /* Espaçamento interno grande para dar respiro visual */
+
+    display: flex;
+    align-items: center; 
+    /* Centraliza verticalmente o conteúdo */
+
+    position: relative; 
+    /* Necessário caso use elementos posicionados dentro */
+
+    overflow: hidden; 
+    /* Esconde qualquer conteúdo que ultrapasse o container */
 }
 
-.base-escopo-apresentacao{
-  position: relative;
-  z-index: 10;
+
+/* Container interno que limita largura do conteúdo */
+.base-escopo-apresentacao {
+    max-width: 600px; 
+    /* Evita que o texto fique muito esticado em telas grandes */
 }
 
-.logo-login {
-  display: flex; 
-  align-items: center; /* Alinhamento vertical */
-  gap: 0.375rem; /* Espaço entre elementos  */
-  margin-bottom: 3rem; /* Espaço da margem inferior */
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo-login h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
+
+
+/* ========================= */
+/* TÍTULO PRINCIPAL */
+/* ========================= */
 
 .apresentacao-principal {
-  font-size: 3.75rem;
+    font-size: 70px; 
+    /* Título bem grande (hero) */
 
-  @media (min-width: 768px) {
-    font-size: 4.5rem;
-  }
+    font-weight: 900; 
+    /* Peso máximo da fonte */
 
-  font-family: Outfit, sans-serif;
+    line-height: 1.1; 
+    /* Espaçamento entre linhas menor (visual mais compacto) */
 
-  font-weight: 800;
-  margin-bottom: 2rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+    margin-bottom: 70px;
 }
+
+
+/* Palavra destacada dentro do título */
+.destaque-apresentacao {
+    color: var(--destaque_rosa); 
+    /* Variável CSS (definida em outro lugar) */
+
+    font-style: italic; 
+    /* Dá um destaque visual */
+}
+
+
+/* ========================= */
+/* TEXTO SECUNDÁRIO */
+/* ========================= */
+
 .apresentacao-secundaria {
-  font-size: 1.25rem;
-  color: 255;
-  max-width: 32rem;
-  margin-bottom: 3rem;
-  line-height: 1.625;
-  font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 70px;
+    opacity: 0.9; 
+    /* Leve transparência para hierarquia visual */
 }
-.destaque-apresentacao{
-  color: pink;
-  font-style: italic;
-}
+
+
+/* ========================= */
+/* GRID DE CARDS */
+/* ========================= */
 
 .grid-apresentacao {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0,1fr));
+    display: grid;
 
-  @media (min-width: 640px) {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-  }
+    grid-template-columns: repeat(2, 1fr); 
+    /* Cria 2 colunas de mesmo tamanho */
 
-  gap: 1.5rem;
-  max-width: 36rem;
+    gap: 20px; 
+    /* Espaçamento entre os cards */
 }
 
-.grid-modelos{ 
-  background-color: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-  padding: 1.5rem;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255,255,255,0.2);
+
+/* CARD INDIVIDUAL */
+.grid-modelos {
+    background: rgba(255, 255, 255, 0.1); 
+    /* Fundo transparente (efeito vidro) */
+
+    padding: 20px;
+
+    border-radius: 20px; 
+    /* Bordas arredondadas */
+
+    backdrop-filter: blur(10px); 
+    /* Efeito glassmorphism (desfoque do fundo) */
 }
 
+
+/* Título do card */
 .grid-modelos-titulo {
-  font-weight: 700;
-  font-size: 1.125rem;
+    font-size: 18px;
+    margin-bottom: 8px;
 }
 
+
+/* Texto do card */
 .grid-modelos-txt {
-  font-weight: 0.875rem;
-  color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    opacity: 0.8;
 }
+
+
+/* Ícones dos cards */
+.faIconGrid {
+    color: var(--destaque_rosa);
+    margin-bottom: 10px;
+}
+
+
+/* ========================= */
+/* LOGIN (LADO DIREITO) */
+/* ========================= */
 
 .base-acesso-login {
-  width: 100%;
-  
-  @media (min-width: 768px) {
-    width: 500px;
-  }
+    width: 600px; 
+    /* largura fixa da área de login */
 
-  background-color: white;
+    background: white;
 
-  display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centraliza o conteúdo no meio */
 
-  flex-direction: column;
-
-  justify-content: center;
-
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-
-  @media (min-width: 768px) {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
+    padding: 60px;
 }
 
+
+/* ========================= */
+/* TÍTULO LOGIN */
+/* ========================= */
+
 .welcome-login {
-  font-size: 2.25rem;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 800;
-  color: black;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 25px;
 }
 
 .welcome-login-txt {
-  color: #64748b;;
-  font-size: 1.125rem;
+    font-size: 20px;
+    color: #64748b; 
+    /* cinza azulado */
 }
+
+
+/* ========================= */
+/* FORMULÁRIO */
+/* ========================= */
 
 .forms-login {
-  margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column; 
+    /* Elementos ficam um abaixo do outro */
+
+    gap: 20px; 
+    /* Espaçamento entre inputs */
 }
 
-.forms-login-box { 
-  margin-top: 0.5rem;
-}
 
-.label-login {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #334155;
-  margin-left: 0.25rem;
-}
+/* Agrupamento de label + input */
 .div-input {
-  position: relative;
+    display: flex;
+    flex-direction: column;
 }
-.input-login { 
-  width: 100%;
 
-  padding-left: 3rem; 
-  padding-right: 1rem;
 
-  padding-top: 1rem; 
-  padding-bottom: 1rem;
+/* Label (texto acima do input) */
+.label-login {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
-  background-color: #f8fafc; 
 
-  border-width: 2px; 
-  border-style: solid;
+/* ========================= */
+/* INPUT CUSTOMIZADO */
+/* ========================= */
 
-  border-color: transparent; 
+/* Container que vira o "input visual" */
+.div-login {
+  display: flex;
+  align-items: center;
 
-  border-radius: 1rem; 
+  background-color: #f1f5f9;
 
-  color: #0f172a; 
+  border: 2px solid transparent; 
+  /* borda invisível (evita pulo no layout ao focar) */
 
-  outline: none; 
+  border-radius: 12px;
+
+  padding: 0 16px;
 
   transition: all 0.2s ease; 
-
-  
-  :focus {
-    background-color: white;
-  }
-
-  
-  :focus {
-    border-color: #10b981;
-  }
+  /* animação suave */
 }
 
-.div-senha-login {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 0.25rem;
+
+/* Quando qualquer elemento dentro (input) recebe foco */
+.div-login:focus-within {
+  background-color: white;
+  border-color: #10b981; 
+  /* muda borda para verde */
 }
 
-.botao-esqueceu-senha {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #ec4899;
+
+/* Ícone dentro do input */
+.faIconLogin {
+  color: #a0aec0; 
+  margin-right: 10px;
+
   transition: color 0.2s ease;
-
-  :hover {
-    color: rgba(236, 72, 153, 0.8);
-  }
 }
+
+
+/* Ícone muda junto com foco */
+.div-login:focus-within .faIconLogin {
+  color: #10b981; 
+}
+
+
+/* Input real */
+.input-login {
+  flex: 1; 
+  /* ocupa todo espaço restante */
+
+  background: transparent; 
+  /* remove fundo */
+
+  border: none; 
+  /* remove borda */
+
+  outline: none; 
+  /* remove contorno azul padrão */
+
+  padding: 14px 0;
+
+  color: #333;
+}
+
+
+/* ========================= */
+/* SENHA */
+/* ========================= */
+
+/* Linha com label + botão */
+.div-senha-login {
+    display: flex;
+    justify-content: space-between; 
+    /* separa label e botão */
+    align-items: center;
+}
+
+
+/* ⚠️ FUTURO: botão de recuperar senha */
+.botao-esqueceu-senha {
+    background: none;
+    border: none;
+
+    color: var(--destaque_rosa);
+
+    font-weight: bold;
+
+    cursor: pointer; 
+    /* mostra mãozinha */
+}
+
+
+/* ========================= */
+/* BOTÃO ENTRAR */
+/* ========================= */
 
 .botao-entrar-login {
-  width: 100%;
-  background-color: #10b981;
-  color: white;
-  font-weight: 800;
-  font-size: 1.125rem;
-  
-  padding-top: 1.25;
-  padding-bottom: 1.25;
+    margin-top: 10px;
 
-  border-radius: 1rem;
+    padding: 16px;
 
-  display: flex;
+    background: #10b981; 
+    color: white;
 
-  align-items: center;
+    font-weight: bold;
 
-  justify-content: center;
+    border: none;
+    border-radius: 16px;
 
-  gap: 0.75rem;
+    cursor: pointer;
 
-  transition: all 0.2s ease;
+    transition: 0.2s;
 
-  box-shadow: 0 20px 25px rgba(16,185,129,0.2);
-
-  :hover {
-    background-color: rgba(16,185,129,0.9);
-  }
-
-
-}
-
-.cadastro-login{
-  margin-top: 3rem; 
-  padding-top: 3rem; 
-
-  border-top-width: 1px;
-
-  border-top-style: solid;
-
-  border-top-color: #f1f5f9; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
-.cadastro-login p {
-  text-align: center;
-  color: #475569;
-  font-weight: 500;
+/* Hover (quando passa o mouse) */
+.botao-entrar-login:hover{
+    background: #0ea372;
 }
 
+
+/* Animação do ícone ao passar mouse */
+.botao-entrar-login:hover .faIconEntrar{
+    transform: translateX(5px); 
+    /* move o ícone para direita */
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Ícone do botão */
+.faIconEntrar {
+    margin-left: 10px;
+
+    transition: color 0.2s ease;  
+}
+
+
+/* ========================= */
+/* FOOTER (CADASTRO) */
+/* ========================= */
+
+.cadastro-login {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+/* ⚠️ FUTURO: link de cadastro */
 .cadastro-login a {
-  font-weight: 800; 
-  
-  color: #ec4899; 
+    color: var(--destaque_rosa);
+    font-weight: bold;
+    text-decoration: none;
+}
 
-  /* hover:underline */
-  :hover {
+.cadastro-login a:hover {
     text-decoration: underline;
-  }
-  
-  text-underline-offset: 4px; 
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+    .base-apresentacao-login {
+        padding: 40px;
+    }
+
+    .apresentacao-principal {
+        font-size: 50px;
+    }
+
+    .apresentacao-secundaria {
+        font-size: 20px;
+    }
+
+    .base-acesso-login {
+        width: 400px;
+        padding: 40px;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .base-login {
+        flex-direction: column; 
+        /* vira layout vertical */
+    }
+
+    .base-apresentacao-login {
+        width: 100%;
+        padding: 40px 20px;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .base-escopo-apresentacao {
+        max-width: 100%;
+    }
+
+    .apresentacao-principal {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .apresentacao-secundaria {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .grid-apresentacao {
+        grid-template-columns: 1fr; 
+        /* vira uma coluna */
+    }
+
+    .base-acesso-login {
+        width: 100%;
+        padding: 30px 20px;
+    }
+}
+
+
+/* MOBILE PEQUENO */
+@media (max-width: 480px) {
+
+    .welcome-login {
+        font-size: 24px;
+    }
+
+    .welcome-login-txt {
+        font-size: 16px;
+    }
+
+    .apresentacao-principal {
+        font-size: 28px;
+    }
+
+    .botao-entrar-login {
+        padding: 14px;
+    }
+
+    .input-login {
+        padding: 12px 0;
+    }
 }
