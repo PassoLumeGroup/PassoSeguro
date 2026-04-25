@@ -1,5 +1,6 @@
 // Importa o CSS do componente
-import './login.css';
+import './Login.css';
+import '../../styles/auth.css';
 
 // Importa os ícones do react-icons (Font Awesome)
 import { FaMapMarkerAlt, FaMap, FaLock, FaPeopleArrows, FaUsers, FaRegEnvelope, FaStar, FaArrowRight } from "react-icons/fa";
@@ -8,26 +9,26 @@ function Login() {
     return(
 
         // Container principal da tela de login (divide apresentação + formulário)
-        <div className='base-login'>
+        <div className='base-auth'>
 
             {/* ========================= */}
             {/* LADO ESQUERDO - APRESENTAÇÃO */}
             {/* ========================= */}
-            <div className='base-apresentacao-login'>
+            <div className='base-apresentacao-auth'>
             
-                <div className='base-escopo-apresentacao'>
+                <div className='base-escopo-apresentacao-auth'>
 
                     {/* Logo do sistema */}
                     {/* ⚠️ FUTURO: substituir este texto por uma logo oficial do sistema (imagem ou SVG) */}
                     {/* Atualmente é apenas um placeholder temporário */}
-                    <div className='logo-login'>
+                    <div className='logo-auth'>
                         <h1>Passo seguro</h1>
                     </div>
 
                     {/* Título principal */}
-                    <h1 className='apresentacao-principal'>
+                    <h1 className='apresentacao-principal-auth'>
                         Sua segurança em&nbsp;
-                        <span className='destaque-apresentacao'>
+                        <span className='destaque-apresentacao-auth'>
                             cada passo
                         </span>
                     </h1>
@@ -38,40 +39,40 @@ function Login() {
                     </p>
 
                     {/* Grid com cards de funcionalidades */}
-                    <div className='grid-apresentacao'>
+                    <div className='grid-apresentacao-login'>
 
                         {/* Card 1 */}
-                        <div className='grid-modelos'>
-                            <FaMap size={28} className='faIconGrid'/>
-                            <h4 className='grid-modelos-titulo'>Mapeamento Real</h4>
-                            <p className='grid-modelos-txt'>
+                        <div className='grid-modelos-login'>
+                            <FaMap size={28} className='faIconGrid-login'/>
+                            <h4 className='grid-modelos-titulo-login'>Mapeamento Real</h4>
+                            <p className='grid-modelos-txt-login'>
                                 Dados atualizados por quem vive a cidade.
                             </p>
                         </div>
 
                         {/* Card 2 */}
-                        <div className='grid-modelos'>
-                            <FaMapMarkerAlt size={28} className='faIconGrid'/>
-                            <h4 className='grid-modelos-titulo'>Pontos de Apoio</h4>
-                            <p className='grid-modelos-txt'>
+                        <div className='grid-modelos-login'>
+                            <FaMapMarkerAlt size={28} className='faIconGrid-login'/>
+                            <h4 className='grid-modelos-titulo-login'>Pontos de Apoio</h4>
+                            <p className='grid-modelos-txt-login'>
                                 Locais verificados para acolhimento imediato.
                             </p>
                         </div>
 
                         {/* Card 3 */}
-                        <div className='grid-modelos'>
-                            <FaStar size={28} className='faIconGrid'/>
-                            <h4 className='grid-modelos-titulo'>Avaliações de Segurança</h4>
-                            <p className='grid-modelos-txt'>
+                        <div className='grid-modelos-login'>
+                            <FaStar size={28} className='faIconGrid-login'/>
+                            <h4 className='grid-modelos-titulo-login'>Avaliações de Segurança</h4>
+                            <p className='grid-modelos-txt-login'>
                                 Avalie locais de 1 a 5 estrelas e consulte avaliações de outras usuárias.
                             </p>
                         </div>
 
                         {/* Card 4 */}
-                        <div className='grid-modelos'>
-                            <FaUsers size={28} className='faIconGrid'/>
-                            <h4 className='grid-modelos-titulo'>Comunidade Ativa</h4>
-                            <p className='grid-modelos-txt'>
+                        <div className='grid-modelos-login'>
+                            <FaUsers size={28} className='faIconGrid-login'/>
+                            <h4 className='grid-modelos-titulo-login'>Comunidade Ativa</h4>
+                            <p className='grid-modelos-txt-login'>
                                Contribua com sua experiência e ajude outras usuárias.
                             </p>
                         </div>
@@ -83,33 +84,33 @@ function Login() {
             {/* ========================= */}
             {/* LADO DIREITO - LOGIN */}
             {/* ========================= */}
-            <div className='base-acesso-login'>
+            <div className='base-acesso-auth'>
                 <div>
 
                     {/* Cabeçalho do login */}
                     <div style={{marginBottom: '3rem'}}>
-                        <h2 className='welcome-login'>Bem-vinda</h2>
-                        <p className='welcome-login-txt'>
+                        <h2 className='welcome-auth'>Bem-vinda</h2>
+                        <p className='welcome-auth-txt'>
                             Entre para ver o que está acontecendo na sua rota
                         </p>
                     </div>
 
                     {/* Formulário */}
-                    <form className='forms-login'>
+                    <form className='forms-auth'>
 
                         {/* INPUT EMAIL */}
-                        <div className='div-input'>
-                            <label className='label-login'>Email</label>
+                        <div className='div-forms-auth'>
+                            <label className='label-forms-auth'>Email</label>
 
                             {/* Container do input com ícone */}
-                            <div className='div-login'>
-                                <FaRegEnvelope size={20} className='faIconLogin'/>
+                            <div className='div-input-auth'>
+                                <FaRegEnvelope size={20} className='faIcon-auth'/>
 
                                 {/* Campo de email */}
                                 <input 
                                     type="email"
                                     required
-                                    className='input-login'
+                                    className='input-auth'
                                     placeholder='Exemplo@gmail.com'
                                 />
                             </div>
@@ -118,11 +119,11 @@ function Login() {
                         {/* ========================= */}
                         {/* INPUT SENHA */}
                         {/* ========================= */}
-                        <div className='div-input'>
+                        <div className='div-forms-auth'>
                             
                             <div className='div-senha-login'>
 
-                                <label className='label-login'>Senha</label>
+                                <label className='label-forms-auth'>Senha</label>
 
                                 {/* ⚠️ FUTURO: botão de recuperação de senha */}
                                 {/* Aqui será implementada a lógica de "esqueci minha senha" */}
@@ -132,13 +133,13 @@ function Login() {
                             </div>
 
                             {/* Campo senha */}
-                            <div className='div-login'>
-                                <FaLock size={20} className='faIconLogin'/>
+                            <div className='div-input-auth'>
+                                <FaLock size={20} className='faIcon-auth'/>
 
                                 <input 
                                     type="password"
                                     required
-                                    className='input-login'
+                                    className='input-auth'
                                     placeholder='••••••••'
                                 />
                             </div>
@@ -147,15 +148,15 @@ function Login() {
 
                         {/* ⚠️ FUTURO: botão principal de login */}
                         {/* Aqui será implementada a autenticação com backend */}
-                        <button type='submit' className='botao-entrar-login'>
-                            Entrar <FaArrowRight size={16} className='faIconEntrar'/>
+                        <button type='submit' className='botao-confirm-auth'>
+                            Entrar <FaArrowRight size={16} className='faIconConfirm'/>
                         </button>
 
                     </form>
 
                     {/* ⚠️ FUTURO: cadastro de usuário */}
                     {/* Aqui será redirecionado para tela de criação de conta */}
-                    <div className='cadastro-login'>
+                    <div className='footer-auth'>
                         <p>Não tem uma conta?</p>
                         <a href="#">Criar conta</a>
                     </div>

@@ -1,0 +1,373 @@
+/* ========================= */
+/* RESET GLOBAL */
+/* ========================= */
+
+/* Remove margens e paddings padrões do navegador
+   e padroniza o cálculo de tamanho dos elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    /* Faz com que padding e border NÃO aumentem o tamanho final do elemento */
+}
+
+/* Estilo base do body (aplicado na página inteira) */
+body {
+    font-family: 'Arial', sans-serif; /* fonte padrão */
+    background-color: #f8fafc; /* cor de fundo geral (cinza claro) */
+}
+
+
+/* ========================= */
+/* CONTAINER PRINCIPAL */
+/* ========================= */
+
+.base-auth {
+    display: flex; 
+    /* Ativa o FLEXBOX → permite organizar filhos lado a lado */
+
+    min-height: 100vh; 
+    /* Altura mínima = 100% da tela (viewport height) */
+}
+
+
+/* ========================= */
+/* HERO / APRESENTAÇÃO */
+/* ========================= */
+
+.base-apresentacao-auth {
+    flex: 1; 
+    /* Ocupa todo o espaço disponível dentro do flex container */
+
+    /* Fundo com gradiente */
+    background: #2A7B9B; /* fallback */
+    background: linear-gradient(
+        90deg, 
+        rgba(42, 123, 155, 1) 0%, 
+        rgba(87, 199, 133, 1) 83%
+    );
+
+    color: white; /* texto branco */
+
+    padding: 80px; 
+    /* Espaçamento interno grande para dar respiro visual */
+
+    display: flex;
+    align-items: center; 
+    /* Centraliza verticalmente o conteúdo */
+
+    position: relative; 
+    /* Necessário caso use elementos posicionados dentro */
+
+    overflow: hidden; 
+    /* Esconde qualquer conteúdo que ultrapasse o container */
+}
+
+/* Container interno que limita largura do conteúdo */
+.base-escopo-apresentacao-auth {
+    max-width: 600px; 
+    /* Evita que o texto fique muito esticado em telas grandes */
+}
+
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo-auth h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+
+/* ========================= */
+/* TÍTULO PRINCIPAL */
+/* ========================= */
+
+.apresentacao-principal-auth {
+    font-size: 70px; 
+    /* Título bem grande (hero) */
+
+    font-weight: 900; 
+    /* Peso máximo da fonte */
+
+    line-height: 1.1; 
+    /* Espaçamento entre linhas menor (visual mais compacto) */
+
+    margin-bottom: 70px;
+}
+
+
+/* Palavra destacada dentro do título */
+.destaque-apresentacao-auth {
+    color: var(--destaque_rosa); 
+    /* Variável CSS (definida em outro lugar) */
+
+    font-style: italic; 
+    /* Dá um destaque visual */
+}
+
+
+/* ======================================= */
+/* (LADO DIREITO) */
+/* ======================================= */
+
+
+
+.base-acesso-auth{
+    width: 600px; 
+    /* largura fixa da área de  */
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centraliza o conteúdo no meio */
+
+    padding: 60px;
+}
+
+/* ========================= */
+/* TÍTULO  */
+/* ========================= */
+
+.welcome-auth {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.welcome-auth-txt {
+    font-size: 20px;
+    color: #64748b;
+}
+
+/* ========================= */
+/* FORMULÁRIO */
+/* ========================= */
+
+.forms-auth {
+    display: flex;
+    flex-direction: column; 
+    /* Elementos ficam um abaixo do outro */
+
+    gap: 20px; 
+    /* Espaçamento entre inputs */
+}
+
+
+/* Agrupamento de label + input */
+.div-forms-auth {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Label (texto acima do input) */
+.label-forms-auth {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+/* ========================= */
+/* INPUT CUSTOMIZADO */
+/* ========================= */
+
+/* Container que vira o "input visual" */
+.div-input-auth {
+  display: flex;
+  align-items: center;
+
+  background-color: #f1f5f9;
+
+  border: 2px solid transparent; 
+  /* borda invisível (evita pulo no layout ao focar) */
+
+  border-radius: 12px;
+
+  padding: 0 16px;
+
+  transition: all 0.2s ease; 
+  /* animação suave */
+}
+
+
+/* Quando qualquer elemento dentro (input) recebe foco */
+.div-input-auth:focus-within {
+  background-color: white;
+  border-color: #10b981; 
+  /* muda borda para verde */
+}
+
+/* Input real */
+.input-auth {
+  flex: 1; 
+  /* ocupa todo espaço restante */
+
+  background: transparent; 
+  /* remove fundo */
+
+  border: none; 
+  /* remove borda */
+
+  outline: none; 
+  /* remove contorno azul padrão */
+
+  padding: 14px 0;
+
+  color: #333;
+}
+
+/* Ícone dentro do input */
+.faIcon-auth {
+  color: #a0aec0; 
+  margin-right: 10px;
+
+  transition: color 0.2s ease;
+}
+
+
+/* Ícone muda junto com foco */
+.div-input-auth:focus-within .faIcon-auth {
+  color: #10b981; 
+}
+
+
+/* ========================= */
+/* BOTÃO CONFIRMAÇÃO */
+/* ========================= */
+
+.botao-confirm-auth {
+    margin-top: 10px;
+
+    padding: 16px;
+
+    background: #10b981; 
+    color: white;
+
+    font-weight: bold;
+
+    border: none;
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover (quando passa o mouse) */
+.botao-confirm-auth:hover{
+    background: #0ea372;
+}
+
+
+/* Animação do ícone ao passar mouse */
+.botao-confirm-auth:hover .faIconConfirm{
+    transform: translateX(5px); 
+    /* move o ícone para direita */
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Ícone do botão */
+.faIconConfirm{
+    margin-left: 10px;
+
+    transition: color 0.2s ease;  
+}
+
+
+/* ========================= */
+/* FOOTER (CADASTRO) */
+/* ========================= */
+
+.footer-auth {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* ⚠️ FUTURO: link de cadastro */
+.footer-auth a {
+    color: var(--destaque_rosa);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-auth a:hover {
+    text-decoration: underline;
+}
+
+/* ========================= */
+/* MOBILE (até 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+    .base-auth {
+        flex-direction: column; 
+    }
+
+    .base-apresentacao-auth {
+        width: 100%;
+        padding: 40px 20px;
+
+        text-align: center;
+        justify-content: center;
+    }
+
+    .base-escopo-apresentacao-auth {
+        max-width: 100%;
+    }
+
+    .apresentacao-principal-auth {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    /* caso você adicione depois */
+    .apresentacao-secundaria-auth {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .base-acesso-auth {
+        width: 100%;
+        padding: 30px 20px;
+    }
+}
+
+
+/* ========================= */
+/* MOBILE PEQUENO (até 480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+    /* se você tiver títulos de */
+    .welcome-auth {
+        font-size: 24px;
+    }
+
+    .welcome-auth-txt {
+        font-size: 16px;
+    }
+
+    .apresentacao-principal-auth {
+        font-size: 28px;
+    }
+
+    .botao-confirm-auth {
+        padding: 14px;
+    }
+
+    .input-auth {
+        padding: 12px 0;
+    }
+}
