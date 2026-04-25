@@ -1,5 +1,5 @@
 // Importa o CSS do componente
-import './login.css';
+import './Login.css';
 import '../../styles/auth.css';
 
 // Importa os ícones do react-icons (Font Awesome)
@@ -89,8 +89,8 @@ function Login() {
 
                     {/* Cabeçalho do login */}
                     <div style={{marginBottom: '3rem'}}>
-                        <h2 className='welcome-login'>Bem-vinda</h2>
-                        <p className='welcome-login-txt'>
+                        <h2 className='welcome-auth'>Bem-vinda</h2>
+                        <p className='welcome-auth-txt'>
                             Entre para ver o que está acontecendo na sua rota
                         </p>
                     </div>
@@ -104,13 +104,13 @@ function Login() {
 
                             {/* Container do input com ícone */}
                             <div className='div-input-auth'>
-                                <FaRegEnvelope size={20} className='faIconLogin-auth'/>
+                                <FaRegEnvelope size={20} className='faIcon-auth'/>
 
                                 {/* Campo de email */}
                                 <input 
                                     type="email"
                                     required
-                                    className='input-login-auth'
+                                    className='input-auth'
                                     placeholder='Exemplo@gmail.com'
                                 />
                             </div>
@@ -134,12 +134,12 @@ function Login() {
 
                             {/* Campo senha */}
                             <div className='div-input-auth'>
-                                <FaLock size={20} className='faIconLogin-auth'/>
+                                <FaLock size={20} className='faIcon-auth'/>
 
                                 <input 
                                     type="password"
                                     required
-                                    className='input-login-auth'
+                                    className='input-auth'
                                     placeholder='••••••••'
                                 />
                             </div>
@@ -156,7 +156,7 @@ function Login() {
 
                     {/* ⚠️ FUTURO: cadastro de usuário */}
                     {/* Aqui será redirecionado para tela de criação de conta */}
-                    <div className='cadastro-login'>
+                    <div className='footer-auth'>
                         <p>Não tem uma conta?</p>
                         <a href="#">Criar conta</a>
                     </div>

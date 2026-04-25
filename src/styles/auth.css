@@ -110,12 +110,14 @@ body {
 
 
 /* ======================================= */
-/* LOGIN (LADO DIREITO) */
+/* (LADO DIREITO) */
 /* ======================================= */
+
+
 
 .base-acesso-auth{
     width: 600px; 
-    /* largura fixa da área de login */
+    /* largura fixa da área de  */
 
     background: white;
 
@@ -127,6 +129,20 @@ body {
     padding: 60px;
 }
 
+/* ========================= */
+/* TÍTULO  */
+/* ========================= */
+
+.welcome-auth {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.welcome-auth-txt {
+    font-size: 20px;
+    color: #64748b;
+}
 
 /* ========================= */
 /* FORMULÁRIO */
@@ -188,7 +204,7 @@ body {
 }
 
 /* Input real */
-.input-login-auth {
+.input-auth {
   flex: 1; 
   /* ocupa todo espaço restante */
 
@@ -207,7 +223,7 @@ body {
 }
 
 /* Ícone dentro do input */
-.faIconLogin-auth {
+.faIcon-auth {
   color: #a0aec0; 
   margin-right: 10px;
 
@@ -216,7 +232,7 @@ body {
 
 
 /* Ícone muda junto com foco */
-.div-input-auth:focus-within .faIconLogin-auth {
+.div-input-auth:focus-within .faIcon-auth {
   color: #10b981; 
 }
 
@@ -271,6 +287,26 @@ body {
 
 
 /* ========================= */
+/* FOOTER (CADASTRO) */
+/* ========================= */
+
+.footer-auth {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* ⚠️ FUTURO: link de cadastro */
+.footer-auth a {
+    color: var(--destaque_rosa);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-auth a:hover {
+    text-decoration: underline;
+}
+
+/* ========================= */
 /* MOBILE (até 768px) */
 /* ========================= */
 @media (max-width: 768px) {
@@ -314,7 +350,7 @@ body {
 /* ========================= */
 @media (max-width: 480px) {
 
-    /* se você tiver títulos de login */
+    /* se você tiver títulos de */
     .welcome-auth {
         font-size: 24px;
     }
@@ -331,7 +367,7 @@ body {
         padding: 14px;
     }
 
-    .input-login-auth {
+    .input-auth {
         padding: 12px 0;
     }
 }

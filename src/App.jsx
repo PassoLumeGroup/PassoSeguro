@@ -3,8 +3,8 @@ import Login from "./pages/login/login"
 
 function App() {
   return (
-    <Login />
-    //<Cadastro />
+    //<Login />
+    <Cadastro />
 
   )
 }

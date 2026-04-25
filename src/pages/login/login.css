@@ -63,21 +63,6 @@
 /* ======================================= */
 
 
-/* ========================= */
-/* TÍTULO LOGIN */
-/* ========================= */
-
-.welcome-login {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 25px;
-}
-
-.welcome-login-txt {
-    font-size: 20px;
-    color: #64748b;
-}
-
 
 /* ==================================== */
 /* FORMULÁRIO */
@@ -104,27 +89,6 @@
     font-weight: bold;
 
     cursor: pointer;
-}
-
-
-/* ========================= */
-/* FOOTER (CADASTRO) */
-/* ========================= */
-
-.cadastro-login {
-    margin-top: 30px;
-    text-align: center;
-}
-
-/* ⚠️ FUTURO: link de cadastro */
-.cadastro-login a {
-    color: var(--destaque_rosa);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.cadastro-login a:hover {
-    text-decoration: underline;
 }
 
 
