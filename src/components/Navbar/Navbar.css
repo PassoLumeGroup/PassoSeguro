@@ -1,0 +1,94 @@
+/* Container principal do cabeçalho */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 48px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Área da Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cor_primaria);
+  color: white;
+  border-radius: 10%;
+  padding: 4px;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+/* Container da Navegação */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Itens individuais da lista */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 15px;
+  transition: all 0.2s ease;
+}
+
+/* Efeito hover nos itens inativos */
+.nav-item:not(.active):hover {
+  color: #474a4e;
+  background-color: #ebebeb;
+
+}
+
+/* Estilo do item Ativo (Sobre) */
+.nav-item.active {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+/* Botão de Sair */
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #ef4444;
+}
+
