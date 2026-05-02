@@ -1,0 +1,198 @@
+/* =========================
+   LAYOUT GERAL
+========================= */
+.pagina-sobre {
+    width: 100%;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero-sobre {
+    background-color: #10b981;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Conteúdo central do hero */
+.hero-conteudo {
+    max-width: 800px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Badge "Feito para mulheres" */
+.badge-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 999px;
+
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    width: fit-content;
+}
+
+/* Título */
+.hero-conteudo h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.hero-conteudo h1 span {
+    color: var(--destaque_rosa);
+}
+
+.hero-conteudo p {
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* =========================
+   SEÇÃO SOBRE
+========================= */
+.secao-sobre {
+    padding: 90px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Card "por que" */
+.card-porque {
+    display: flex;
+    gap: 60px;
+    align-items: stretch;
+    margin-bottom: 5%;
+}
+
+/* Texto explicativo */
+.texto-porque {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-porque h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.texto-porque p {
+    color: #475569;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* Card de recursos */
+.card-recursos {
+    background: #f1f5f9;
+    padding: 40px;
+    border-radius: 40px;
+    position: relative;
+    flex: 1;
+}
+
+/* Ícone do card */
+.icone-card {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+
+    background: #ec4899;
+    color: white;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
+}
+
+/* Lista */
+.lista-recursos div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 12px 0;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Check icon */
+.icone-check {
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* =========================
+   VALORES
+========================= */
+.valores {
+    background: #0f172a;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 60px;
+    text-align: center;
+}
+
+.valores h2 {
+    margin-top: 10px;
+    font-size: 36px;
+}
+
+/* Grid valores */
+.grid-valores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 5%;
+}
+
+.grid-valores div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.grid-valores h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.grid-valores p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Ícone valores */
+.icone-valores {
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--destaque_rosa);
+    padding: 10px;
+}
