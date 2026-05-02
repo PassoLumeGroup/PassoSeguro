@@ -1,0 +1,144 @@
+/* ========================= */
+/* LOGOUT */
+/* ========================= */
+
+.logo-navbar {
+  background-color: #10b981;
+}
+
+/* ========================= */
+/* HEADER PRINCIPAL */
+/* ========================= */
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(19px);
+ 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================= */
+/* CONTAINER GERAL */
+/* ========================= */
+.div-primary-nav {
+  width: 100%;
+}
+
+.div-conteudo-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 24px;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ========================= */
+/* NAV */
+/* ========================= */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================= */
+/* ITENS */
+/* ========================= */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding: 8px 14px;
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+  text-decoration: none;
+  
+}
+
+
+
+/* Hover APENAS nos que NÃO são ativos */
+.nav-item:not(.active):hover {
+  color: #374151;
+  background-color: #f3f4f6;
+}
+
+/* Item ativo */
+.nav-item.active {
+  background-color: #10b981;
+  color: white;
+}
+
+/* ========================= */
+/* DIVISOR */
+/* ========================= */
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #e2e8f0;
+  margin: 0 8px;
+}
+
+/* ========================= */
+/* LOGOUT */
+/* ========================= */
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+
+  color: #9ca3af;
+  cursor: pointer;
+
+  padding: 8px;
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #ef4444;
+  background-color: #fef2f2;
+}

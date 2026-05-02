@@ -1,11 +1,16 @@
 // Importa o CSS do componente
 import './Login.css';
 import '../../styles/auth.css';
+import { Link, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Importa os ícones do react-icons (Font Awesome)
 import { FaMapMarkerAlt, FaMap, FaLock, FaPeopleArrows, FaUsers, FaRegEnvelope, FaStar, FaArrowRight } from "react-icons/fa";
 
 function Login() {
+
+    const navigate = useNavigate();
+
     return(
 
         // Container principal da tela de login (divide apresentação + formulário)
@@ -96,7 +101,10 @@ function Login() {
                     </div>
 
                     {/* Formulário */}
-                    <form className='forms-auth'>
+                    <form 
+                        className='forms-auth'
+                        onSubmit={() => navigate('/mapa')}
+                    >
 
                         {/* INPUT EMAIL */}
                         <div className='div-forms-auth'>
@@ -146,19 +154,19 @@ function Login() {
 
                         </div>
 
-                        {/* ⚠️ FUTURO: botão principal de login */}
-                        {/* Aqui será implementada a autenticação com backend */}
-                        <button type='submit' className='botao-confirm-auth'>
+                        <button 
+                            type='submit' 
+                            className='botao-confirm-auth'
+                        >
                             Entrar <FaArrowRight size={16} className='faIconConfirm'/>
                         </button>
 
                     </form>
 
-                    {/* ⚠️ FUTURO: cadastro de usuário */}
-                    {/* Aqui será redirecionado para tela de criação de conta */}
+                    
                     <div className='footer-auth'>
                         <p>Não tem uma conta?</p>
-                        <a href="#">Criar conta</a>
+                        <Link to="/cadastro" className='link-cadastro-auth'>Criar conta</Link>
                     </div>
 
                 </div>

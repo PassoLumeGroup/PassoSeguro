@@ -4,6 +4,9 @@
 
 import './Cadastro.css';
 import '../../styles/auth.css';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import { 
     FaCreativeCommonsNc, 
@@ -21,6 +24,9 @@ import {
 // COMPONENTE
 // =========================
 function Cadastro() {
+    const navigate = useNavigate();
+    const [telefone, setTelefone] = useState('');
+
     return(
 
         <div className='base-auth'>
@@ -91,7 +97,6 @@ function Cadastro() {
                 <div>
 
                     {/* Cabeçalho */}
-                    {/* ⚠️ FUTURO: integrar com backend para criação real de conta */}
                     <div style={{marginBottom: '3rem'}}>
                         <h2 className='welcome-auth'>Criar Conta</h2>
 
@@ -104,9 +109,13 @@ function Cadastro() {
                     {/* ========================= */}
                     {/* FORMULÁRIO */}
                     {/* ========================= */}
-                    {/* ⚠️ FUTURO: validar campos (email, senha, telefone) */}
-                    {/* ⚠️ FUTURO: enviar dados para API */}
-                    <form className='forms-auth'>
+                    <form 
+                        className='forms-auth'
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            navigate('/');
+                        }}
+                    >
 
                         {/* NOME */}
                         <div className='div-forms-auth'>
@@ -142,19 +151,30 @@ function Cadastro() {
                         </div>
 
 
-                        {/* TELEFONE */}
+                        {/* TELEFONE (MÁSCARA MANUAL - SEM TELA BRANCA) */}
                         <div className='div-forms-auth'>
                             <label className='label-forms-auth'>Telefone</label>
 
                             <div className='div-input-auth'>
                                 <FaPhoneAlt size={20} className='faIcon-auth'/>
 
-                                <input 
-                                    type="tel"
+                                <input
+                                    type="text"
+                                    maxLength={15}
                                     required
                                     className='input-auth'
-                                    placeholder='(XX) XXXXX-XXXX'
-                                    pattern="\(\d{2}\) \d{5}-\d{4}"
+                                    placeholder='(11) 99999-9999'
+                                    value={telefone}
+                                    onChange={(e) => {
+                                        let v = e.target.value;
+
+                                        v = v.replace(/\D/g, '');
+
+                                        v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+                                        v = v.replace(/(\d{5})(\d)/, '$1-$2');
+
+                                        setTelefone(v);
+                                    }}
                                 />
                             </div>
                         </div>
@@ -163,8 +183,6 @@ function Cadastro() {
                         {/* SENHAS */}
                         <div className='div-forms-senha-cadastro'>
 
-                            {/* Senha */}
-                            {/* ⚠️ FUTURO: validação de senha forte */}
                             <div className='div-forms-auth'>
                                 <label className='label-forms-auth'>Senha</label>                     
 
@@ -180,8 +198,6 @@ function Cadastro() {
                                 </div>
                             </div>
 
-                            {/* Confirmar senha */}
-                            {/* ⚠️ FUTURO: verificar se as senhas coincidem */}
                             <div className='div-forms-auth'>
                                 <label className='label-forms-auth'>Confirmar Senha</label>                     
 
@@ -200,8 +216,6 @@ function Cadastro() {
 
 
                         {/* DOCUMENTO */}
-                        {/* ⚠️ FUTURO: integrar com verificação de identidade */}
-                        {/* ⚠️ FUTURO: preview da imagem */}
                         <div className='div-forms-auth'>
                             <label className='label-forms-auth'>
                                 Documento (RG ou CNH)
@@ -229,10 +243,11 @@ function Cadastro() {
 
 
                         {/* TERMOS */}
-                        {/* ⚠️ FUTURO: criar páginas reais de termos */}
                         <div className='div-forms-termos'>
                             <input type="checkbox" required />
-
+                            
+                            {/* ⚠️ FUTURO: Atualizar tanto para modelo LINK como também linkar para algum lugar */}
+                            {/* Atualmente é apenas um placeholder temporário */}
                             <p>
                                 Li e concordo com os 
                                 <a className='link-termos' href='#'> Termos de Uso</a> 
@@ -242,21 +257,19 @@ function Cadastro() {
                         </div>
 
 
-                        {/* BOTÃO */}
-                        {/* ⚠️ FUTURO: loading + resposta da API */}
-                        <button type='submit' className='botao-confirm-auth'>
+                        <button 
+                            type='submit' 
+                            className='botao-confirm-auth'
+                        >
                             Finalizar Cadastro 
                             <FaArrowRight size={16} className='faIconConfirm'/>
                         </button>
 
                     </form>
 
-
-                    {/* LOGIN */}
-                    {/* ⚠️ FUTURO: navegação com React Router */}
                     <div className='footer-auth'>
                         <p>Já possui uma conta?</p>
-                        <a href="#">Entrar</a>
+                        <Link to="/">Entrar</Link>
                     </div>
 
                 </div>
