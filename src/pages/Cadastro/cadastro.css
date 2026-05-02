@@ -1,0 +1,207 @@
+/* ========================= */
+/* GRID DE APRESENTAÇÃO */
+/* ========================= */
+
+/* Container dos cards (lado esquerdo) */
+.grid-apresentacao-registro {
+    display: flex;
+    flex-direction: column; /* um card embaixo do outro */
+    gap: 20px;
+}
+
+/* CARD INDIVIDUAL */
+.grid-modelos-registro {
+    display: flex;
+    gap: 24px; /* espaço entre ícone e texto */
+}
+
+
+/* ========================= */
+/* ÍCONE DO CARD */
+/* ========================= */
+
+.icon-grid-registro {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+
+    width: 64px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ========================= */
+/* TEXTOS DOS CARDS */
+/* ========================= */
+
+/* Título */
+.grid-modelos-titulo-registro {
+    font-size: 20px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+/* Descrição */
+.grid-modelos-txt-registro {
+    font-size: 18px;
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.788);
+}
+
+/* Cor dos ícones */
+.faIconGrid-registro {
+    color: var(--destaque_rosa);
+}
+
+
+/* ========================= */
+/* SENHAS (lado a lado) */
+/* ========================= */
+
+.div-forms-senha-cadastro {
+    display: flex;
+    gap: 10px; /* espaço entre senha e confirmar senha */
+}
+
+
+/* ========================= */
+/* TERMOS */
+/* ========================= */
+
+.div-forms-termos{
+    display: flex;
+    align-items: center;
+}
+
+.div-forms-termos p {
+    color: #64748b;
+    margin-left: 10px;
+}
+
+.div-forms-termos a {
+    color: green;
+    text-decoration: none;
+}
+
+/* Hover do link */
+.link-termos:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* INPUT DE DOCUMENTO */
+/* ========================= */
+
+/* Área visual clicável */
+.div-forms-input-doc {
+    border: 2px dashed #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+
+    background-color: #f8fafc;
+    cursor: pointer;
+
+    transition: 0.3s;
+    display: inline;
+}
+
+/* Input real escondido */
+.forms-input-doc {
+    display: none;
+}
+
+/* Textos dentro do upload */
+.div-forms-input-doc h3 {
+    color: #64748b;
+}
+
+.div-forms-input-doc p {
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* ========================= */
+/* RESPONSIVIDADE CADASTRO */
+/* ========================= */
+
+/* TABLET / MOBILE (até 768px) */
+@media (max-width: 768px) {
+
+    /* Senhas ficam uma embaixo da outra */
+    .div-forms-senha-cadastro {
+        flex-direction: column;
+    }
+
+    /* Cards ficam mais compactos */
+    .grid-modelos-registro {
+        gap: 16px;
+    }
+
+    .grid-modelos-titulo-registro {
+        font-size: 18px;
+    }
+
+    .grid-modelos-txt-registro {
+        font-size: 15px;
+    }
+
+    /* Ícone menor */
+    .icon-grid-registro {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Upload ocupa toda largura */
+    .div-forms-input-doc {
+        width: 100%;
+        padding: 24px;
+    }
+}
+
+
+/* MOBILE PEQUENO (até 480px) */
+@media (max-width: 480px) {
+
+    /* Cards ainda mais compactos */
+    .grid-modelos-registro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .grid-modelos-titulo-registro {
+        font-size: 16px;
+    }
+
+    .grid-modelos-txt-registro {
+        font-size: 14px;
+    }
+
+    /* Ícone menor ainda */
+    .icon-grid-registro {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Texto do upload menor */
+    .div-forms-input-doc h3 {
+        font-size: 16px;
+    }
+
+    .div-forms-input-doc p {
+        font-size: 11px;
+    }
+
+    /* Termos quebra melhor linha */
+    .div-forms-termos {
+        align-items: flex-start;
+    }
+
+    .div-forms-termos p {
+        font-size: 14px;
+    }
+}

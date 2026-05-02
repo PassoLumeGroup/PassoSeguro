@@ -1,12 +1,29 @@
 import React from 'react';
-import Navbar from './components/Navbar/Navbar';
+import Login from "./pages/login/Login"
+import Cadastro from "./pages/cadastro/Cadastro"
+import Mapa from './pages/mapa/Mapa';
+import Perfil from './pages/perfil/Perfil';
+import Sobre from './pages/sobre/Sobre';
+import Suporte from './pages/suporte/Suporte';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import LayoutNavbar from './components/navbar/LayoutNavBar';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <h1>Meu projeto React</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+
+        <Route element={<LayoutNavbar />}>
+          <Route path="/mapa" element={<Mapa />} />
+          <Route path="/perfil" element={<Perfil />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/suporte" element={<Suporte />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

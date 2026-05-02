@@ -1,94 +1,144 @@
-/* Container principal do cabeçalho */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 48px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #f0f0f0;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+/* ========================= */
+/* LOGOUT */
+/* ========================= */
+
+.logo-navbar {
+  background-color: #10b981;
 }
 
-/* Área da Logo */
+/* ========================= */
+/* HEADER PRINCIPAL */
+/* ========================= */
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(19px);
+ 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================= */
+/* CONTAINER GERAL */
+/* ========================= */
+.div-primary-nav {
+  width: 100%;
+}
+
+.div-conteudo-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 24px;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 8px;
   cursor: pointer;
 }
 
-.logo-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--cor_primaria);
-  color: white;
-  border-radius: 10%;
-  padding: 4px;
-}
-
 .logo-text {
-  font-size: 1.25rem;
+  font-size: 20px;
+  font-weight: 700;
   color: #111827;
 }
 
-/* Container da Navegação */
+/* ========================= */
+/* NAV */
+/* ========================= */
 .nav-container {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Itens individuais da lista */
+/* ========================= */
+/* ITENS */
+/* ========================= */
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+
   color: #6b7280;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 700;
+
   cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 15px;
+
+  padding: 8px 14px;
+  border-radius: 12px;
+
   transition: all 0.2s ease;
+  text-decoration: none;
+  
 }
 
-/* Efeito hover nos itens inativos */
+
+
+/* Hover APENAS nos que NÃO são ativos */
 .nav-item:not(.active):hover {
-  color: #474a4e;
-  background-color: #ebebeb;
-
+  color: #374151;
+  background-color: #f3f4f6;
 }
 
-/* Estilo do item Ativo (Sobre) */
+/* Item ativo */
 .nav-item.active {
   background-color: #10b981;
-  color: #ffffff;
+  color: white;
 }
 
-/* Botão de Sair */
+/* ========================= */
+/* DIVISOR */
+/* ========================= */
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #e2e8f0;
+  margin: 0 8px;
+}
+
+/* ========================= */
+/* LOGOUT */
+/* ========================= */
 .logout-button {
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: transparent;
   border: none;
+
   color: #9ca3af;
   cursor: pointer;
+
   padding: 8px;
-  transition: color 0.2s ease;
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
 }
 
 .logout-button:hover {
   color: #ef4444;
+  background-color: #fef2f2;
 }
-

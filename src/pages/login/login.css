@@ -1,0 +1,124 @@
+/* ========================================= */
+/* HERO / APRESENTAÇÃO */
+/* ========================================= */
+
+
+/* ========================= */
+/* TEXTO SECUNDÁRIO */
+/* ========================= */
+
+.apresentacao-secundaria {
+    font-size: 25px;
+    margin-bottom: 70px;
+    opacity: 0.9;
+}
+
+
+/* ========================= */
+/* GRID DE CARDS */
+/* ========================= */
+
+.grid-apresentacao-login {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* CARD INDIVIDUAL */
+.grid-modelos-login {
+    background: rgba(255, 255, 255, 0.1);
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Título do card */
+.grid-modelos-titulo-login {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+
+/* Texto do card */
+.grid-modelos-txt-login {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+/* Ícones dos cards */
+.faIconGrid-login {
+    color: var(--destaque_rosa);
+    margin-bottom: 10px;
+}
+
+
+/* ======================================= */
+/* LOGIN (ESPECÍFICO) */
+/* ======================================= */
+
+
+
+/* ==================================== */
+/* FORMULÁRIO */
+/* ==================================== */
+
+
+/* ========================= */
+/* SENHA */
+/* ========================= */
+
+.div-senha-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ⚠️ FUTURO: botão de recuperar senha */
+.botao-esqueceu-senha {
+    background: none;
+    border: none;
+
+    color: var(--destaque_rosa);
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
+
+/* MOBILE (até 768px) */
+@media (max-width: 768px) {
+
+    .apresentacao-secundaria {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .grid-apresentacao {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* MOBILE PEQUENO (até 480px) */
+@media (max-width: 480px) {
+
+    .welcome-login {
+        font-size: 24px;
+    }
+
+    .welcome-login-txt {
+        font-size: 16px;
+    }
+}
