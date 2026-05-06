@@ -1,109 +1,158 @@
+// Importa o React
+import React from 'react';
+
+// Importa o CSS do componente
 import './Perfil.css';
 
-function Perfil({ isEditing = false }) {
-  const handlePhotoChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      console.log("Upload da foto selecionada:", file.name);
-    }
-  };
+/**
+ * Componente Perfil
+ * Responsável por exibir a interface de gerenciamento de conta do usuário
+ */
+const Perfil = () => {
 
-  return (
-    <div className="perfil-page">
-      <div className="container-perfil">
+  return(
 
-        {/* COLUNA ESQUERDA: Perfil e Dados Pessoais */}
-        <aside className="sidebar-perfil">
-          <div className="profile-card">
-            <div className="banner-perfil"></div>
-            <div className="profile-main-info">
-              <div className="avatar-wrapper standalone-upload">
-                <div className="avatar-img">👤</div>
-                <label htmlFor="quick-photo-upload" className="overlay-upload">
-                  <span>📷 Alterar Foto</span>
-                </label>
-                <input
-                  id="quick-photo-upload"
-                  type="file"
-                  accept="image/*"
-                  onChange={handlePhotoChange}
-                  style={{ display: 'none' }}
-                />
-              </div>
+    // =========================
+    // CONTAINER PRINCIPAL
+    // =========================
+    <div className="secao-principal-perfil">
 
-              <div className="name-section">
-                <h1>Fulana de Tal</h1>
-                <p className="user-status">Nível 5 • Verificada</p>
-                {!isEditing && (
-                  <button className="btn-edit-profile">📝 Editar Perfil Completo</button>
-                )}
-              </div>
+      {/* ========================= */}
+      {/* CARTÃO DE PERFIL */}
+      {/* ========================= */}
+      <div className="container-cartao-perfil">
+
+        {/* Banner decorativo superior */}
+        <div className="banner-superior-decorativo"></div>
+
+        {/* ========================= */}
+        {/* CONTEÚDO DO PERFIL */}
+        {/* ========================= */}
+        <div className="corpo-conteudo-usuario">
+
+          {/* ========================= */}
+          {/* CABEÇALHO */}
+          {/* ========================= */}
+          <div className="cabecalho-perfil-vertical">
+
+            {/* FOTO DO USUÁRIO */}
+            <div className="moldura-foto-perfil">
+
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                alt="Foto do usuário"
+                className="imagem-redonda-usuario"
+              />
+
+              {/* ⚠️ FUTURO: abrir modal para alterar foto */}
+              <div className="botao-camera-flutuante">📷</div>
             </div>
 
-            <div className="personal-details">
-              <h2 className="section-title">Dados Pessoais</h2>
-              <div className="detail-item">
-                <p><strong>Gênero:</strong> Feminino</p>
-                <p><strong>E-mail:</strong> fulana.tal@email.com</p>
-                <p><strong>Telefone:</strong> (85) 99999-9999</p>
-                <p><strong>Nascimento:</strong> 15/05/1998</p>
-                <p><strong>Localização:</strong> Fortaleza, Brasil</p>
+            {/* INFORMAÇÕES + AÇÕES */}
+            <div className="informacoes-e-acoes-abaixo">
+
+              {/* NOME E LOCALIZAÇÃO */}
+              <div className="bloco-nome-cidade">
+                <h1>Maria Paula</h1>
+                <p className="subtitulo-localizacao">
+                  📍 Fortaleza, Ceará
+                </p>
+              </div>
+
+              {/* BOTÕES DE AÇÃO */}
+              <div className="botoes-topo-perfil">
+
+                {/* ⚠️ FUTURO: habilitar edição real */}
+                <button className="botao-interacao-cinza">
+                  ✎ Editar Perfil
+                </button>
+
+                <button className="botao-interacao-rosa">
+                  🛡 Verificação
+                </button>
+
               </div>
             </div>
           </div>
-        </aside>
 
-        {/* COLUNA DIREITA: Conteúdo Principal */}
-        <main className="content-perfil">
+          {/* ========================= */}
+          {/* ESTATÍSTICAS */}
+          {/* ========================= */}
+          <div className="grade-estatisticas-principais">
 
-          <section className="dashboard-card">
-            <h2 className="section-title">Estatísticas de Contribuição</h2>
-            <div className="stats-grid">
-              <div className="stat-box">
-                <span className="stat-number">147</span>
-                <span className="stat-desc">Pontos Adicionados</span>
-              </div>
-              <div className="stat-box">
-                <span className="stat-number">23</span>
-                <span className="stat-desc">Alertas Reportados</span>
-              </div>
-              <div className="stat-box">
-                <span className="stat-number">52km</span>
-                <span className="stat-desc">Distância Mapeada</span>
-              </div>
+            <div className="caixa-estatistica-item">
+              <span className="valor-estatistica-grande">12</span>
+              <span className="texto-legenda-cinza">
+                PONTOS SUGERIDOS
+              </span>
             </div>
-          </section>
 
-          <section className="dashboard-card">
-            <h2 className="section-title">Pontos Recentemente Mapeados</h2>
-            <div className="activity-list">
-              <div className="activity-item">
-                <div className="activity-icon blue">📍</div>
-                <div className="activity-text">
-                  <h3>Ponto de Ônibus Iluminado</h3>
-                  <p>Passagem segura atenta registrada recentemente.</p>
+            <div className="caixa-estatistica-item">
+              <span className="valor-estatistica-grande">45</span>
+              <span className="texto-legenda-cinza">
+                RELATOS FEITOS
+              </span>
+            </div>
+
+            <div className="caixa-estatistica-item">
+              <span className="valor-estatistica-grande">156</span>
+              <span className="texto-legenda-cinza">
+                IRMÃS AJUDADAS
+              </span>
+            </div>
+
+          </div>
+
+          {/* ========================= */}
+          {/* INFORMAÇÕES PESSOAIS */}
+          {/* ========================= */}
+          <div className="bloco-informacoes-pessoais">
+
+            <h3>Informações Pessoais</h3>
+
+            <div className="grade-campos-duplos">
+
+              {/* EMAIL */}
+              <div className="grupo-campo-formulario">
+                <label className="label-destaque">E-MAIL</label>
+                <div className="campo-exibicao-dados">
+                  maria3pqpaulaa@gmail.com
                 </div>
               </div>
-              <div className="activity-item">
-                <div className="activity-icon green">👮</div>
-                <div className="activity-text">
-                  <h3>Posto Policial</h3>
-                  <p>Comunicação direta com a central verificada.</p>
+
+              {/* TELEFONE */}
+              <div className="grupo-campo-formulario">
+                <label className="label-destaque">TELEFONE</label>
+                <div className="campo-exibicao-dados">
+                  (85) 99999-9999
                 </div>
               </div>
-            </div>
-          </section>
 
-          {isEditing && (
-            <div className="form-actions">
-              <button className="btn-cancel">Descartar</button>
-              <button className="btn-save">Salvar Alterações</button>
             </div>
-          )}
-        </main>
+          </div>
+
+          {/* ========================= */}
+          {/* AÇÕES FINAIS */}
+          {/* ========================= */}
+          <div className="rodape-acoes-finais">
+
+            {/* ⚠️ AÇÃO PERIGOSA */}
+            <button className="botao-excluir-destaque">
+              🗑 Excluir minha conta
+            </button>
+
+            {/* LOGOUT */}
+            <button className="botao-destaque-sair">
+              ➜ Sair da Conta
+            </button>
+
+          </div>
+
+        </div>
       </div>
     </div>
   );
-}
+};
 
+// Exporta o componente
 export default Perfil;
