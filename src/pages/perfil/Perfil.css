@@ -1,0 +1,261 @@
+/* =========================
+   VARIÁVEIS GLOBAIS (TEMA)
+   ========================= */
+:root {
+  --cor-verde-primaria: #10b981; /* Cor principal da aplicação */
+  --cor-fundo-site: #f8fafc; /* Cor de fundo geral */
+  --cor-texto-principal: #1e293b; /* Cor principal dos textos */
+  --cor-texto-apoio: #94a3b8; /* Cor de textos secundários */
+  --cor-rosa-bg: #fff1f2; /* Fundo de destaque rosa */
+  --cor-rosa-texto: #e11d48; /* Texto em destaque rosa */
+}
+
+/* =========================
+   LAYOUT PRINCIPAL
+   ========================= */
+.secao-principal-perfil {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--cor-fundo-site); /* Usa cor padrão do site */
+  display: flex;
+  justify-content: center;
+  padding: 45px 20px;
+}
+
+/* Cartão central */
+.container-cartao-perfil {
+  width: 100%;
+  max-width: 825px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  overflow: hidden; /* Esconde conteúdo que ultrapassa */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra leve */
+  height: fit-content; /* Altura baseada no conteúdo */
+}
+
+/* Banner superior decorativo */
+.banner-superior-decorativo {
+  height: 200px;
+  background-color: var(--cor-verde-primaria); /* Cor principal */
+}
+
+/* Conteúdo interno */
+.corpo-conteudo-usuario {
+  padding: 0 50px 90px 50px;
+}
+
+/* =========================
+   CABEÇALHO PERFIL
+   ========================= */
+.cabecalho-perfil-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -85px; /* Faz a foto sobrepor o banner */
+  margin-bottom: 35px;
+  gap: 10px;
+}
+
+/* Moldura da foto */
+.moldura-foto-perfil {
+  position: relative;
+  background-color: #ffffff;
+  padding: 6px;
+  border-radius: 30px;
+  width: fit-content;
+}
+
+/* Imagem do usuário */
+.imagem-redonda-usuario {
+  width: 150px;
+  height: 150px;
+  border-radius: 22px;
+  object-fit: cover; /* Ajusta imagem sem distorcer */
+}
+
+/* Ícone de câmera sobre a foto */
+.botao-camera-flutuante {
+  position: absolute; /* Posiciona dentro da moldura */
+  bottom: 15px;
+  right: 15px;
+  background: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-size: 13px;
+}
+
+/* Área de nome + botões */
+.informacoes-e-acoes-abaixo {
+  display: flex;
+  justify-content: space-between; /* Espaço entre nome e botões */
+  align-items: center;
+  width: 100%;
+}
+
+/* Nome do usuário */
+.bloco-nome-cidade h1 {
+  font-size: 30px;
+  color: var(--cor-texto-principal);
+  margin: 0;
+  font-weight: 800;
+}
+
+/* Localização */
+.subtitulo-localizacao {
+  color: var(--cor-texto-apoio);
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* Botões do topo */
+.botoes-topo-perfil {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilo base dos botões */
+.botao-interacao-cinza,
+.botao-interacao-rosa {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Botão cinza */
+.botao-interacao-cinza {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Botão rosa */
+.botao-interacao-rosa {
+  background-color: var(--cor-rosa-bg);
+  color: var(--cor-rosa-texto);
+}
+
+/* =========================
+   ESTATÍSTICAS
+   ========================= */
+.grade-estatisticas-principais {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.caixa-estatistica-item {
+  background-color: #f8fafc;
+  padding: 40px 10px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.valor-estatistica-grande {
+  display: block;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--cor-verde-primaria);
+}
+
+.texto-legenda-cinza {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--cor-texto-apoio);
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   INFORMAÇÕES PESSOAIS
+   ========================= */
+.bloco-informacoes-pessoais h3 {
+  font-size: 21px;
+  margin-bottom: 25px;
+  color: var(--cor-texto-principal);
+}
+
+.grade-campos-duplos {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colunas */
+  gap: 20px;
+}
+
+.label-destaque {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.campo-exibicao-dados {
+  background-color: #f8fafc;
+  padding: 18px;
+  border-radius: 14px;
+  color: var(--cor-texto-principal);
+  font-weight: 500;
+}
+
+/* =========================
+   RODAPÉ
+   ========================= */
+.rodape-acoes-finais {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 69px;
+  padding-top: 35px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Botão excluir */
+.botao-excluir-destaque {
+  background: none;
+  border: none;
+  color: var(--cor-texto-apoio);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* Botão sair */
+.botao-destaque-sair {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 18px 45px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s; /* Animação ao clicar */
+}
+
+/* Efeito de clique */
+.botao-destaque-sair:active {
+  transform: scale(0.98); /* Dá efeito de pressão */
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+@media (max-width: 768px) {
+  .informacoes-e-acoes-abaixo {
+    flex-direction: column; /* Empilha elementos */
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .grade-estatisticas-principais,
+  .grade-campos-duplos {
+    grid-template-columns: 1fr; /* Uma coluna no mobile */
+  }
+}
